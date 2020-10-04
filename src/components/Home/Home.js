@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
 
 class Home extends Component {
   // Renders the entire app on the DOM
@@ -6,7 +7,6 @@ class Home extends Component {
   componentDidMount(){
     // our call for getMovies and updateMovies so we can display on DOM
     this.props.dispatch({ type: 'FETCH_MOVIES' });
-    
 }
   render() {
     return (
@@ -17,4 +17,8 @@ class Home extends Component {
   }
 }
 
-export default Home;
+const mapStateToProps = (reduxState) =>({
+    reduxState
+})
+
+export default connect(mapStateToProps)(Home);

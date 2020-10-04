@@ -2,15 +2,22 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool')
 
-
 router.get('/', (req,res) => {
-  
+  const queryText= `
+  SELECT movies.id, title, description, poster, array_agg(genres.name)
+    FROM movies
+    JOIN movie_genres on movies.id = movie_genres.movie_id
+    JOIN genres ON movie_genres.genre_id = genres.id
+    GROUP BY movies.id
+    ORDER BY title ASC;`;
+    pool.query(queryText)
+    .then( (result) => {
+      res.send(result.rows);
+    })
+    .catch( (error) => {
+      res.sendStatus(500)
+    })
 })
-
-
-
-
-
 
 router.post('/', (req, res) => {
   console.log(req.body);
