@@ -13,6 +13,7 @@ router.get('/', (req,res) => {
     pool.query(queryText)
     .then( (result) => {
       res.send(result.rows);
+      console.log('recoginize')
     })
     .catch( (error) => {
       res.sendStatus(500)
