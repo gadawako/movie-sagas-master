@@ -12,6 +12,7 @@ import createSagaMiddleware from 'redux-saga';
 import axios from 'axios';
 import {takeEvery, put} from 'redux-saga/effects';
 
+
 // ---------- GENERATOR FUNCTIONS ---------- 
 // Create the rootSaga generator function
 function* rootSaga() {
