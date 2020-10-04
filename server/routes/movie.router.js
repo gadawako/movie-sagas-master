@@ -3,6 +3,15 @@ const router = express.Router();
 const pool = require('../modules/pool')
 
 
+router.get('/', (req,res) => {
+  
+})
+
+
+
+
+
+
 router.post('/', (req, res) => {
   console.log(req.body);
   // RETURNING "id" will give us back the id of the created movie
