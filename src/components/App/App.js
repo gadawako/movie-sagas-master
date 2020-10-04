@@ -19,6 +19,7 @@ class App extends Component {
           {/* ADD PAGES! */}
         </Router>
         <p>Empty Page</p>
+        <h1>Amir</h1>
       </div>
     );
   }
