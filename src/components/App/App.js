@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import {HashRouter as Router, Route} from 'react-router-dom';
 import './App.css';
-import Home from '../Home/Home';
+// import Home from '../Home/Home';
 import Edit from '../Edit/Edit';
 import Details from '../Details/Details';
 import MovieList from '../MovieList/movieList';
 import {connect} from 'react-redux'
+import movieList from '../MovieList/movieList';
 
 class App extends Component {
   // Renders the entire app on the DOM
@@ -13,9 +14,8 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Movies!</h1>
-        <MovieList />
         <Router>
-          <Route exact path="/" component={Home}/>
+          <Route exact path="/" component={MovieList}/>
           <Route exact path="/edit" component={Edit}/>
           <Route exact path="/detail" component={Details}/>
           {/* ADD PAGES! */}
