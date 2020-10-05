@@ -4,7 +4,8 @@ import './App.css';
 import Home from '../Home/Home';
 import Edit from '../Edit/Edit';
 import Details from '../Details/Details';
-import MovieList from '../MovieList/movieList'
+import MovieList from '../MovieList/movieList';
+import {connect} from 'react-redux'
 
 class App extends Component {
   // Renders the entire app on the DOM
@@ -19,9 +20,11 @@ class App extends Component {
           <Route exact path="/detail" component={Details}/>
           {/* ADD PAGES! */}
         </Router>
-        <p>Empty Page</p>
       </div>
     );
   }
 }
-export default App;
+const reduxStateToProps = (reduxState) =>
+ ({ reduxState });
+
+export default connect(reduxStateToProps)(App);

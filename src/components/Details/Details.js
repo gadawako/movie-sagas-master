@@ -5,11 +5,9 @@ class Details extends Component {
   // Renders the entire app on the DOM
 
   render() {
-    console.log('movie props', this.props)
     return (
       <div>
           <h1>Details</h1>
-          
       </div>
     );
   }
@@ -20,3 +18,4 @@ const mapStateToProps = (reduxState) =>({
 })
 
 export default connect(mapStateToProps)(Details);
+

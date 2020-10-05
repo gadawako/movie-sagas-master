@@ -1,26 +1,19 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
+import MovieItem from '../MovieItem/MovieItem'
 
 class MovieList extends Component {
-  // Renders the entire app on the DOM
-
-  showDescription = (event) => {
-    // event.preventDefault();
-    // this.props.dispatch
-    // this.props.history.push('/detail')
-  }
+  // Renders the entire movieList on the DOM
 
   render(){
   console.log('movie list')
     return (
       <div>
-          <h1>gada</h1>
-          <ul>
-        { this.props.reduxState.movies.map( (movie, index) => 
-          <li key={index}>  {movie.id} . {movie.title}
-          <img onClick={this.showDescription} src={movie.poster}></img></li>
+        { this.props.reduxState.movies.map( (movie) => 
+        <MovieItem key={movie.id} history={this.props.history}
+        movie={movie}/>
         )}
-      </ul>
+
       </div>
     );
   }
