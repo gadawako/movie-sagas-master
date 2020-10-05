@@ -5,7 +5,9 @@ class MovieItem extends Component {
   // Renders the entire MovieItem on the DOM
 
   showDescription = () => {
-      console.log('show description')
+      console.log('show description', this.props.movie.id)
+      this.props.dispatch({ type: 'FETCH_DETAILS', payload: this.props.movie})
+      this.props.dispatch({ type: 'FETCH_GENRE', payload: this.props.movie.id})
       this.props.history.push('/detail')
   }
   render() {

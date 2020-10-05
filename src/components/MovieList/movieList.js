@@ -17,7 +17,6 @@ class MovieList extends Component {
         <MovieItem key={movie.id} history={this.props.history}
         movie={movie}/>
         )}
-
       </div>
     );
   }
